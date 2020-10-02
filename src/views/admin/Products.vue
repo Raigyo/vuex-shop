@@ -5,14 +5,10 @@
 </template>
 
 <script>
-import ProductList from "@/components/admin/ProductList"
-  export default {
-    components: {
-      ProductList
-    }
+import ProductList from "@/components/admin/ProductList";
+export default {
+  components: {
+    ProductList
   }
+};
 </script>
-
-<style lang="scss" scoped>
-
-</style>

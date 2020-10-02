@@ -7,4 +7,4 @@ export default {
   getProducts() {
     return axios.get(`${baseUrl}/products`);
   }
-}
+};
