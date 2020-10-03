@@ -2,7 +2,7 @@
 
 September 2020
 
-\> 🔨 From Udemy '[Devenir opérationnel rapidement en Vue et Vuex](https://www.udemy.com/course/devenir-operationnel-rapidement-en-vue-et-vuex/)'
+\> 🔨 Book Shop application with Vuex. From Udemy '[Devenir opérationnel rapidement en Vue et Vuex](https://www.udemy.com/course/devenir-operationnel-rapidement-en-vue-et-vuex/)'
 
 \* * *
 
@@ -12,7 +12,11 @@ Server: [vue-shop-json-server](https://my-json-server.typicode.com/raigyo/vue-sh
 
 ![vuex-logo](_readme-img/vuex-logo.jpeg)
 
-![capture](_readme-img/vuex-shop.png)
+![capture](_readme-img/viewx-shop-capture-01.png)
+
+![capture](_readme-img/viewx-shop-capture-02.png)
+
+![capture](_readme-img/viewx-shop-capture-03.png)
 
 ## Vue main concepts
 
