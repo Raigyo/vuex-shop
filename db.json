@@ -97,18 +97,6 @@
       "year": 2008,
       "price": 34.47,
       "image": "https://images-na.ssl-images-amazon.com/images/I/51szD9HC9pL._SL200_.jpg"
-    },
-    {
-      "title": "test",
-      "author": {
-        "firstName": "test",
-        "lastName": "test"
-      },
-      "publisher": "test",
-      "year": "2020",
-      "price": "12",
-      "image": "Test.png",
-      "id": "test"
     }
   ],
   "cart": []
