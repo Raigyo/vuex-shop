@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     products: [],
     errors: [],
+    cart: []
   },
   mutations: {
     GET_PRODUCTS(state, products) {
@@ -19,15 +20,18 @@ export default new Vuex.Store({
     GET_ERROR(state, error) {
       state.errors = [error, ...state.errors];
     },
+    UPDATE_CART(state, cart) {
+      state.cart = cart;
+    }
   },
   actions: {
     getProducts({ commit }) {
       productService
         .getProducts()
-        .then((res) => {
+        .then(res => {
           commit("GET_PRODUCTS", res.data);
         })
-        .catch((err) => {
+        .catch(err => {
           const error = {
             date: new Date(),
             message: `Failed to retrieve products: ${err.message}`,
@@ -35,12 +39,40 @@ export default new Vuex.Store({
           commit("GET_ERROR", error);
         });
     },
-    //context + payload
+    //context (commit = extraction from object + payload)
     createProduct({ commit }, product) {
       productService.createProduct(product).then(() => {
         commit("CREATE_PRODUCT", product);
       });
+    },
+    updateCart({ commit }, product) {
+      productService
+        .addToCart(product)
+        .then(() => {
+          //commit("UPDATE_CART", product);
+          commit("UPDATE_CART",
+            JSON.parse(localStorage.getItem("vuex-commerce-cart")));
+        })
+        .catch(err => {
+          const error = {
+            date: new Date(),
+            message: `Failed to update to cart: ${err.message}`
+          };
+          commit("GET_ERROR", error);
+        });
+    },
+    getCartFromStorage({ commit }) {
+      const cart = JSON.parse(localStorage.getItem("vuex-commerce-cart"));
+      if (!cart) return;
+      commit(
+        "UPDATE_CART",
+        JSON.parse(localStorage.getItem("vuex-commerce-cart"))
+      );
     }
   },
-  modules: {}
+  getters: {
+    getCart(state) {
+      return state.cart;
+    }
+  }
 });

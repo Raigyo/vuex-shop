@@ -1,11 +1,22 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/contact">About</router-link> |
-      <router-link to="/admin">Admin</router-link>
+      <span class="spacer">
+        <router-link to="/">Home</router-link>
+      </span>
+      <span class="spacer">
+        <router-link to="/contact">Contact</router-link>
+      </span>
+      <span class="spacer">
+        <router-link to="/admin">Admin</router-link>
+      </span>
+      <span class="float-right">
+        <router-link to="/cart">Cart (0)</router-link>
+      </span>
     </div>
-    <router-view />
+    <div class="container-fluid">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -29,5 +40,9 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.spacer{
+  padding: 10px;
 }
 </style>

@@ -99,18 +99,6 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/51szD9HC9pL._SL200_.jpg"
     },
     {
-      "title": "",
-      "author": {
-        "firstName": "",
-        "lastName": ""
-      },
-      "publisher": "",
-      "year": "",
-      "price": "",
-      "image": "",
-      "id": 9781617292860
-    },
-    {
       "title": "test",
       "author": {
         "firstName": "test",
@@ -122,5 +110,6 @@
       "image": "Test.png",
       "id": "test"
     }
-  ]
+  ],
+  "cart": []
 }
