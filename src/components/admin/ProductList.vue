@@ -1,3 +1,5 @@
+/* Component to display list of books */
+
 <template>
   <div>
     <table class="table" v-if="products">

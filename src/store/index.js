@@ -5,26 +5,41 @@ import productService from "../services/productService";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    products: [],
+    errors: [],
+  },
   mutations: {
     GET_PRODUCTS(state, products) {
       state.products = products;
-    }
+    },
+    CREATE_PRODUCT(state, product) {
+      state.products = [product, ...state.products];
+    },
+    GET_ERROR(state, error) {
+      state.errors = [error, ...state.errors];
+    },
   },
   actions: {
     getProducts({ commit }) {
       productService
         .getProducts()
-        .then(res => {
+        .then((res) => {
           commit("GET_PRODUCTS", res.data);
         })
-        .catch(err => {
+        .catch((err) => {
           const error = {
             date: new Date(),
-            message: `Failed to retrieve products: ${err.message}`
+            message: `Failed to retrieve products: ${err.message}`,
           };
-          commit("CREATE_ERROR", error);
+          commit("GET_ERROR", error);
         });
+    },
+    //context + payload
+    createProduct({ commit }, product) {
+      productService.createProduct(product).then(() => {
+        commit("CREATE_PRODUCT", product);
+      });
     }
   },
   modules: {}

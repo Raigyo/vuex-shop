@@ -1,5 +1,8 @@
+/* Vue with all product lists */
+
 <template>
   <div>
+    <router-link to="/admin/product-add">add new book</router-link>
     <ProductList />
   </div>
 </template>
