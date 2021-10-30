@@ -71,8 +71,8 @@ VueX is is like Redfux for React but with  special features for Vue.
 ![vuex-schema](_readme-img/vuex-schema.png)
 
 - **Getters** will make values able to show statically in our templates. In other words, getters can read the value, but not mutate the state.
-- **Mutations** (dispatched) will allow us to update the state, but they will always be synchronous. Mutations are the only way to change data in the state in the store.
-- **Actions** (commited) will allow us to update the state, asynchronously, but will use an existing mutation. This can be very helpful if you need to perform a few different mutations at once in a particular order.
+- **Mutations** (we commit mutations) will allow us to update the state, but they will always be **synchronous**. Mutations are the only way to change data in the state in the store.
+- **Actions** (we dispatch actions) will allow us to update the state, **asynchronously**, but will use an existing mutation. This can be very helpful if you need to perform a few different mutations at once in a particular order.
 
 **store / index.js**
 
